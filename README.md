@@ -1,7 +1,5 @@
 # Manim Animation Generator
 
-A web application that generates mathematical animations using Python and the Manim library. Users can type natural language descriptions of animations, and the application will generate and display the corresponding animation.
-
 ## Features
 
 - **Simple Text-to-Animation Interface**: Type what you want to see, get an animation
