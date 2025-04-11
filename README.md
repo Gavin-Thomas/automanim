@@ -9,10 +9,6 @@ A web application that generates mathematical animations using Python and the Ma
 - **Code Display**: View the generated Manim code for learning or further customization
 - **Minimalist Design**: Clean, two-pane interface for easy use
 
-## Screenshots
-
-![Manim Animation Generator Interface](screenshots/interface.png)
-
 ## Requirements
 
 - Python 3.10+
