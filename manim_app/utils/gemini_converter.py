@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class GeminiTextToManimConverter:
     """
-    A class to convert natural language descriptions to Manim code using Google's Gemini 2.5 Pro API.
+    A class to convert natural language descriptions to Manim code using Google's Gemini 1.5 Pro API.
     """
     
     def __init__(self, api_key):
