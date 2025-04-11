@@ -191,12 +191,6 @@ manim_app/
     └── videos/             # Output video files
 ```
 
-## Limitations
-
-- The text-to-Manim code conversion is currently based on simple keyword matching and templates. It doesn't support complex natural language understanding.
-- Only a limited set of animation types are supported.
-- The application is designed for demonstration purposes and may not handle high loads.
-
 ## Advanced AI Integration
 
 The application now integrates with Google's Gemini 2.5 Pro API for enhanced text-to-code conversion capabilities. This integration enables:
