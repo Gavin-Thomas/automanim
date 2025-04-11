@@ -1,0 +1,11 @@
+version: '3'
+services:
+  manim-app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./media:/app/media
+    restart: always
+    environment:
+      - FLASK_ENV=production

@@ -1,0 +1,4 @@
+manim
+openai
+flask
+pycairo

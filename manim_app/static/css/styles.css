@@ -1,0 +1,271 @@
+/* Custom styles for Manim Animation Generator */
+
+/* Base styles */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0069d9;
+    --secondary-color: #6c757d;
+    --light-bg: #f8f9fa;
+    --dark-text: #212529;
+    --border-color: #dee2e6;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Header styles */
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.app-title {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.app-subtitle {
+    color: var(--secondary-color);
+    font-weight: 300;
+}
+
+/* Two-pane layout */
+.two-pane {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: calc(100vh - 200px);
+    min-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .two-pane {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.input-pane, .output-pane {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pane-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+/* Input area styles */
+#description {
+    flex: 1;
+    resize: none;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-family: inherit;
+}
+
+#description:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#generate-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#generate-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+#generate-btn:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+/* Output area styles */
+.output-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.status-message {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Loading spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 123, 255, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Video container */
+.video-container {
+    width: 100%;
+    max-width: 100%;
+    display: none;
+}
+
+video {
+    width: 100%;
+    max-height: 400px;
+    border-radius: 4px;
+    background-color: #000;
+}
+
+/* Code display */
+.code-container {
+    width: 100%;
+    margin-top: 20px;
+    display: none;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.code-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+.code-actions button {
+    background-color: transparent;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.code-actions button:hover {
+    text-decoration: underline;
+}
+
+pre {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    max-height: 200px;
+    margin: 0;
+}
+
+/* Error message */
+.error-message {
+    color: var(--error-color);
+    text-align: center;
+    margin: 20px 0;
+    display: none;
+    padding: 10px;
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 4px;
+}
+
+/* Examples section */
+.examples {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.examples-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.example-item {
+    cursor: pointer;
+    color: var(--primary-color);
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.example-item:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 20px;
+}

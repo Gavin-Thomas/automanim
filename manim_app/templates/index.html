@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manim Animation Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1 class="app-title">Manim Animation Generator</h1>
+            <p class="app-subtitle">Type your description and generate mathematical animations</p>
+        </header>
+        
+        <div class="two-pane">
+            <div class="input-pane">
+                <h2 class="pane-title">Animation Description</h2>
+                <textarea id="description" placeholder="e.g., 'Create a blue circle and transform it into a red square' or 'Write the text &quot;Hello, Manim!&quot; and draw a circle below it'"></textarea>
+                <div class="examples">
+                    <div class="examples-title">Try these examples:</div>
+                    <span class="example-item" onclick="setExample('Create a blue circle and transform it into a red square')">Circle to Square</span>
+                    <span class="example-item" onclick="setExample('Write the text &quot;Hello, Manim!&quot; and fade in a green triangle')">Text with Triangle</span>
+                    <span class="example-item" onclick="setExample('Create a red square and rotate it')">Rotating Square</span>
+                </div>
+                <button id="generate-btn">Generate Animation</button>
+            </div>
+            
+            <div class="output-pane">
+                <h2 class="pane-title">Animation Output</h2>
+                <div class="output-content">
+                    <div class="status-container" id="initial-status">
+                        <p class="status-message">Enter a description and click "Generate Animation" to start</p>
+                    </div>
+                    
+                    <div class="status-container" id="loading-status" style="display: none;">
+                        <div class="spinner"></div>
+                        <p class="status-message" id="status-text">Generating animation...</p>
+                    </div>
+                    
+                    <div class="error-message" id="error-message"></div>
+                    
+                    <div class="video-container" id="video-container">
+                        <video id="animation-video" controls></video>
+                    </div>
+                    
+                    <div class="code-container" id="code-container">
+                        <div class="code-header">
+                            <div class="code-title">Generated Manim Code:</div>
+                            <div class="code-actions">
+                                <button id="copy-code-btn">Copy Code</button>
+                            </div>
+                        </div>
+                        <pre id="generated-code"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
