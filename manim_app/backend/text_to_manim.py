@@ -9,7 +9,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.gemini_converter import GeminiTextToManimConverter
 
 # Get the API key from environment variable or use the provided one
-api_key = os.environ.get('GEMINI_API_KEY', 'AIzaSyBqneZRu4sddzPHhuSS5Sj2qJ2D77HAPh8')
+api_key = os.environ.get('GEMINI_API_KEY', 'PUT YOUR API KEY HERE')
 
 # Initialize the Gemini converter
 gemini_converter = GeminiTextToManimConverter(api_key)
